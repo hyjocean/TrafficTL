@@ -1,5 +1,5 @@
 # TrafficTL
-The code for paper "Traffic Prediction with Transfer Learning: A Mutual Information-based Approach"
+The code for paper "[Traffic Prediction with Transfer Learning: A Mutual Information-based Approach](https://ieeexplore.ieee.org/abstract/document/10105852)"
 
 # Step 1
 ```python
