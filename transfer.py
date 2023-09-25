@@ -1,10 +1,4 @@
 #coding=utf-8
-# from nis import cat
-import os
-# os.environ["MKL_NUM_THREADS"] = "8"
-# os.environ["NUMEXPR_NUM_THREADS"] = "8"
-# os.environ["OPENBLAS_NUM_THREADS"] = "8"
-
 import torch
 import torch.nn as nn
 import numpy as np 
