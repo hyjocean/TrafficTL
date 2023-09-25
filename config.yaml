@@ -1,0 +1,60 @@
+
+basic:
+  SEED: 6524
+  data_path: {'bj': 'data/beijing/bj_data.npz', 
+              'hz': 'data/hangzhou/hz_data.npz',
+              'sh': 'data/shanghai/sh_data.npz',
+              'hk': 'data/hongkong/hk_data.npz',
+              'pems': 'data/pems/pems_data.npz',
+              'src': 'data/src_data.npz',
+              'trg': 'data/trg_data.npz'
+              }
+  items_day: 288
+              
+cluster:
+  num_list: [3, 4, 5, 8, 10, 15, 20]
+  seq_len: 12
+  t: 6
+  gru_model:
+    lr: 0.001
+    bz: 128
+    epochs: 200
+    input_size: 1
+    hidden_size: 32
+    num_layers: 1
+    bidirectional: 1
+    early_epoch_stop: 20
+    path:  #"/home/yhuang863/TL_Traff/traffitl_zipfil/cluster/model_pth/gru_model/bj_hz.pth"
+  cls_model:
+    epochs: 150
+    lr: 0.001
+    early_epoch_stop: 10
+    path: #"/home/yhuang863/TL_Traff/traffitl_zipfil/cluster/model_pth/cls_model/bj_hz_cln_8.pth"
+  results:
+    path: #"/home/yhuang863/TL_Traff/traffitl_zipfil/cluster/res/bj_hz_clnum_8.npz"
+    bs_num: 
+    rl_num: 
+
+
+transfer:
+  src_days4train: 30
+  trg_days4train: 1
+  trg_days4val: 11
+  trg_days4test: 21
+  seq_len: 12
+  pre_len: 6
+  bz: 128
+  lr: 0.001
+  epochs: 200
+  inp_dim: 1
+  oup_dim: 1
+  backbone: 
+    name: 'dcrnn'
+    cl_decay_steps: 1000
+    max_diffusion_step: 2
+    filter_type: 'laplacian'
+    num_rnn_layers: 1
+    rnn_units: 32 
+    use_curriculum_learning:  False
+    early_epoch_stop: 20
+    path: 
