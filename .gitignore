@@ -2,17 +2,19 @@
 *.npz
 *.pth
 *.log
+*.pyc
 
 ./cluster/res/*.npz
 ./cluster/model_pth/*
 
-/data/*
+__pycache__/
+/data/
 
 !/data/data_process.py
 
 
-lib/
+lib/*
 
 /Model/MetaST
-/model_pth/tre_model/*
+/model_pth/trs_model/*
 test.py
