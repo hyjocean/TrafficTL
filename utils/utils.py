@@ -27,14 +27,13 @@ def device_set(device):
         torch.backends.cudnn.deterministic = True
 
 
-
-
 def seed_set(SEED):
     if not SEED:
         SEED = np.random.randint(0, 10000)
     np.random.seed(SEED)
     torch.manual_seed(SEED)
     torch.cuda.manual_seed_all(SEED)
+    # torch.use_deterministic_algorithms(True)
     return SEED 
 
 def load_config(config_path):

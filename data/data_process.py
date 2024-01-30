@@ -1,6 +1,4 @@
 import numpy as np
-import pandas as pd
-import os
 
 from torch.utils import data
 from utils import utils
